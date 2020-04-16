@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+apply from: configs.module_gradle
+
+android {
+    resourcePrefix 'home_'
+
+    compileSdkVersion build_version.compileSdkVersion
+    buildToolsVersion build_version.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion build_version.minSdkVersion
+        targetSdkVersion build_version.targetSdkVersion
+        versionCode build_version.versionCode
+        versionName build_version.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+}
+
+dependencies {
+    implementation project(":libs_router")
+
+    implementation deps.banner
+}

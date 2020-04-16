@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+apply from: configs.module_gradle
+
+android {
+    resourcePrefix 'basic_'
+
+    compileSdkVersion build_version.compileSdkVersion
+    buildToolsVersion build_version.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion build_version.minSdkVersion
+        targetSdkVersion build_version.targetSdkVersion
+        versionCode build_version.versionCode
+        versionName build_version.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+}
+
+dependencies {
+    api deps.kotlin_stdlib
+    api deps.core_ktx
+    api deps.viewmodel_ktx
+
+    api deps.appcompat
+    api deps.recyclerview
+    api deps.constraintlayout
+    api deps.multidex
+
+    api deps.arouter
+    kapt deps.arouter_compiler
+
+    api deps.smart_refresh
+    api deps.multitype
+
+    api deps.timber
+    api deps.coroutines
+    api deps.coroutines_android
+
+    api deps.retrofit
+    api deps.retrofit_gson
+    api deps.okhttp3
+    api deps.okhttp_logging
+
+    api deps.glide
+    kapt deps.glide_compiler
+    api deps.super_textview
+}

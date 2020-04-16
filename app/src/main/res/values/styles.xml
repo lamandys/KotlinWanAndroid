@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="appHomeRadioButtonStyle">
+        <item name="android:button">@null</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@drawable/app_selector_home_text_drawable</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+</resources>

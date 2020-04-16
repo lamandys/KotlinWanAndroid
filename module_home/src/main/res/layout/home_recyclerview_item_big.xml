@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/basic_shape_corner_10"
+    android:elevation="5dp">
+
+    <TextView
+        android:id="@+id/home_item_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="作者"
+        android:textColor="@color/textNormalColor"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/home_item_time"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/home_item_tag_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/home_item_time"
+        app:layout_constraintLeft_toRightOf="@+id/home_item_author" />
+
+    <TextView
+        android:id="@+id/home_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="1小时前"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/home_item_image"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_item_time" />
+
+    <TextView
+        android:id="@+id/home_item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:lineSpacingMultiplier="1.2"
+        android:text="说说Flutter中最熟悉的陌生人"
+        android:textColor="@color/textLightColor"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/home_item_image"
+        app:layout_constraintLeft_toRightOf="@+id/home_item_image"
+        />
+
+    <TextView
+        android:id="@+id/home_item_desc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="这是描述描述描述描述描述描述描述"
+        android:textSize="12sp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/textNormalColor"
+        android:layout_marginRight="5dp"
+        android:lineSpacingMultiplier="1.1"
+        app:layout_constraintTop_toBottomOf="@+id/home_item_title"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toBottomOf="@+id/home_item_image"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintLeft_toLeftOf="@+id/home_item_title"
+        />
+
+    <TextView
+        android:id="@+id/home_item_chapter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="广场Tab"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_item_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

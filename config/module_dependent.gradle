@@ -1,0 +1,102 @@
+static def _addRepos(RepositoryHandler handler) {
+    handler.maven { url "https://jitpack.io" }
+    handler.google()
+    handler.mavenCentral()
+    handler.jcenter()
+}
+
+ext {
+
+    build_version = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.2",
+            minSdkVersion    : 21,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : '0.1.0',
+            applicationId    : "com.lamandys.copywanandroid"
+    ]
+
+    versions = [
+            kotlin_version  : '1.3.60',
+            android_plugin  : '3.5.2',
+
+            support         : '1.1.0',
+            core_ktx        : '1.2.0',
+            viewmodel_ktx   : '2.2.0',
+            constraintlayout: '1.1.3',
+            multidex        : '2.0.1',
+
+            junit           : '4.13',
+            junit_ext       : '1.1.1',
+            junit_espresso  : '3.2.0',
+
+            smart_refresh   : '1.1.0',
+            multitype       : '4.2.0',
+
+            timber          : '4.7.1',
+            glide           : '4.10.0',
+
+            arouter         : '1.5.0',
+            arouter_compiler: '1.2.2',
+            arouter_register: '1.0.2',
+
+            retrofit        : '2.6.1',
+            okhttp3         : '4.3.0',
+            okhttp_logging  : '4.3.0',
+
+            banner          : '2.0.0-alpha02',
+            coroutines      : '1.3.1',
+            super_textview  : '2.4.2',
+
+    ]
+
+    build_plugins = [
+            android_gradle  : [group: 'com.android.tools.build', name: 'gradle', version: versions.android_plugin],
+            kotlin_gradle   : [group: 'org.jetbrains.kotlin', name: 'kotlin-gradle-plugin', version: versions.kotlin_version],
+            arouter_register: [group: 'com.alibaba', name: 'arouter-register', version: versions.arouter_register],
+    ]
+
+    deps = [
+            kotlin_stdlib     : [group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib-jdk7', version: versions.kotlin_version],
+            core_ktx          : [group: 'androidx.core', name: 'core-ktx', version: versions.core_ktx],
+            viewmodel_ktx     : [group: 'androidx.lifecycle', name: 'lifecycle-viewmodel-ktx', version: versions.viewmodel_ktx],
+
+            appcompat         : [group: 'androidx.appcompat', name: 'appcompat', version: versions.support],
+            constraintlayout  : [group: 'androidx.constraintlayout', name: 'constraintlayout', version: versions.constraintlayout],
+            recyclerview      : [group: 'androidx.recyclerview', name: 'recyclerview', version: versions.support],
+            multidex          : [group: 'androidx.multidex', name: 'multidex', version: versions.multidex],
+
+            junit             : [group: 'junit', name: 'junit', version: versions.junit],
+            junit_ext         : [group: 'androidx.test.ext', name: 'junit', version: versions.junit_ext],
+            junit_espresso    : [group: 'androidx.test.espresso', name: 'espresso-core', version: versions.junit_espresso],
+
+            smart_refresh     : [group: 'com.scwang.smartrefresh', name: 'SmartRefreshLayout', version: versions.smart_refresh],
+            multitype         : [group: 'com.drakeet.multitype', name: 'multitype', version: versions.multitype],
+
+            timber            : [group: 'com.jakewharton.timber', name: 'timber', version: versions.timber],
+
+            retrofit          : [group: 'com.squareup.retrofit2', name: 'retrofit', version: versions.retrofit],
+            retrofit_gson     : [group: 'com.squareup.retrofit2', name: 'converter-gson', version: versions.retrofit],
+            okhttp3           : [group: 'com.squareup.okhttp3', name: 'okhttp', version: versions.okhttp3],
+            okhttp_logging    : [group: 'com.squareup.okhttp3', name: 'logging-interceptor', version: versions.okhttp_logging],
+
+            glide             : [group: 'com.github.bumptech.glide', name: 'glide', version: versions.glide],
+            glide_compiler    : [group: 'com.github.bumptech.glide', name: 'compiler', version: versions.glide],
+
+            arouter           : [group: 'com.alibaba', name: 'arouter-api', version: versions.arouter],
+            arouter_compiler  : [group: 'com.alibaba', name: 'arouter-compiler', version: versions.arouter_compiler],
+
+            banner            : [group: 'com.youth.banner', name: 'banner', version: versions.banner],
+            coroutines        : [group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-core', version: versions.coroutines],
+            coroutines_android: [group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-android', version: versions.coroutines],
+
+            super_textview    : [group: 'com.github.lygttpod', name: 'SuperTextView', version: versions.super_textview],
+    ]
+
+    addRepos = this.&_addRepos
+
+    configs = [
+            module_gradle: "$rootProject.projectDir/config/module_public_config.gradle",
+    ]
+}

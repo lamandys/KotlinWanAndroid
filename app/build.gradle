@@ -1,0 +1,23 @@
+apply plugin: 'com.android.application'
+apply from: configs.module_gradle
+
+android {
+    compileSdkVersion build_version.compileSdkVersion
+    buildToolsVersion build_version.buildToolsVersion
+
+    defaultConfig {
+        applicationId build_version.applicationId
+        minSdkVersion build_version.minSdkVersion
+        targetSdkVersion build_version.targetSdkVersion
+        versionCode build_version.versionCode
+        versionName build_version.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
+
+dependencies {
+    implementation project(":libs_router")
+    runtimeOnly project(":module_home")
+    runtimeOnly project(":module_project")
+}
